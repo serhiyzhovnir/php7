@@ -1,8 +1,6 @@
-# delegator/php7
+# atwix/zebra-php7
 
-[![](https://images.microbadger.com/badges/image/delegator/php7.svg)](http://microbadger.com/images/delegator/php7)
-
-[Debian][1] for PHP web applications, based on `php:7.1.16-fpm`. Use this image as
+[Debian][1] for PHP web applications, based on `php:7.1.22-fpm`. Use this image as
 a base for your own Docker images.
 
 # Image contents

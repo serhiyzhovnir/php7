@@ -1,5 +1,5 @@
-FROM php:7.1.16-fpm
-MAINTAINER Tom Richards <tom.r@delegator.com>
+FROM php:7.1.32-fpm
+MAINTAINER Ihor Furseyev <i.furseyev@atwix.com>
 
 # Pre-repository setup: Add support for HTTPS repositories
 RUN apt-get update -q; \
