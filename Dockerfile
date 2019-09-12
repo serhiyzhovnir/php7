@@ -5,6 +5,9 @@ MAINTAINER Ihor Furseyev <i.furseyev@atwix.com>
 RUN apt-get update -q; \
     apt-get install -qy apt-transport-https
 
+# Instal gnupg
+RUN apt-get install -qy gnupg
+
 # Repository: Yarn package manager
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 COPY ./config/etc/apt/sources.list.d/yarn.list /etc/apt/sources.list.d/yarn.list
@@ -18,9 +21,8 @@ RUN apt-get update -q; \
     apt-get upgrade -qy; \
     DEBIAN_FRONTEND=noninteractive apt-get install -qy \
       bash supervisor \
-      build-essential hardening-wrapper \
       curl htop git vim wget \
-      nginx-extras mysql-client redis-tools nullmailer \
+      nginx-extras mariadb-client redis-tools nullmailer \
       nodejs yarn \
       ruby ruby-dev rake \
       libxml2-utils \
@@ -29,7 +31,7 @@ RUN apt-get update -q; \
       libicu-dev \
       libjpeg62-turbo-dev \
       libmcrypt-dev \
-      libpng12-dev \
+      libpng-dev \
       libxml2-dev libxslt1-dev \
       zlib1g-dev
 RUN docker-php-ext-install -j$(nproc) bcmath intl mcrypt opcache pdo_mysql soap xsl zip
