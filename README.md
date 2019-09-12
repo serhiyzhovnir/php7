@@ -1,4 +1,4 @@
-# atwix/zebra-php7
+# furseyev/php7
 
 [Debian][1] for PHP web applications, based on `php:7.1.22-fpm`. Use this image as
 a base for your own Docker images.
