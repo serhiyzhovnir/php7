@@ -35,7 +35,7 @@ RUN apt-get update -q; \
       libxml2-dev libxslt1-dev \
       zlib1g-dev \
       libzip-dev
-RUN docker-php-ext-install -j$(nproc) bcmath intl opcache pdo_mysql soap xsl zip
+RUN docker-php-ext-install -j$(nproc) bcmath intl opcache pdo_mysql soap xsl zip iconv
 RUN pecl install mcrypt-1.0.3
 RUN docker-php-ext-enable mcrypt
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
