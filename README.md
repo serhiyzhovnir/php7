@@ -1,4 +1,4 @@
-# furseyev/php7
+# furseyev/php72
 
 [Debian][1] for PHP web applications, based on `php:7.3-fpm`. Use this image as
 a base for your own Docker images.
