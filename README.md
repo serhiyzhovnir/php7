@@ -1,6 +1,6 @@
-# furseyev/php72
+# furseyev/php71
 
-[Debian][1] for PHP web applications, based on `php:7.3-fpm`. Use this image as
+[Debian][1] for PHP web applications, based on `php:7.1.22-fpm`. Use this image as
 a base for your own Docker images.
 
 # Image contents
