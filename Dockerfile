@@ -1,4 +1,4 @@
-FROM php:7.2-fpm
+FROM php:7.1.32-fpm
 MAINTAINER Ihor Furseyev <i.furseyev@atwix.com>
 
 # Pre-repository setup: Add support for HTTPS repositories
@@ -33,14 +33,11 @@ RUN apt-get update -q; \
       libmcrypt-dev \
       libpng-dev \
       libxml2-dev libxslt1-dev \
-      zlib1g-dev \
-      libzip-dev
-RUN docker-php-ext-install -j$(nproc) bcmath intl opcache pdo_mysql soap xsl zip iconv sockets
-RUN pecl install mcrypt-1.0.3
-RUN docker-php-ext-enable mcrypt
+      zlib1g-dev
+RUN docker-php-ext-install -j$(nproc) bcmath intl mcrypt opcache pdo_mysql soap xsl zip
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd
-RUN pecl install xdebug-2.9.2
+RUN pecl install xdebug-2.5.5
 RUN apt-get clean -qy; \
     rm -f /etc/nginx/sites-enabled/default; \
     ln -sf /dev/stdout /var/log/nginx/access.log; \
