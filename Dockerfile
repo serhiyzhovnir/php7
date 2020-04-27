@@ -21,8 +21,10 @@ RUN apt-get update -q; \
     apt-get upgrade -qy; \
     DEBIAN_FRONTEND=noninteractive apt-get install -qy \
       bash supervisor \
+      build-essential \
       curl htop git vim wget \
-      nginx-extras mariadb-client redis-tools nullmailer \
+      nginx-extras mariadb-client redis-tools \
+      nullmailer mailutils \
       nodejs yarn \
       ruby ruby-dev rake \
       libxml2-utils \
